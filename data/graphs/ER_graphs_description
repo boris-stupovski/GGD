@@ -1,0 +1,17 @@
+Dictionary with istances of largest connected component (LCC) of Erdos Renyi Model as nx.Graph objects
+
+For each number of nodes(of the LCC)  N = 512, 1024, 2048, 4096, 8192
+For each average degree(aproximately) k = 2, 4, 6, 8 
+There are 20 different istances indexed with range(20)
+
+Data is in a form of dictionary with keys as tuples (number_of_nodes, average_degree, istance_number)
+
+#EXAMPE
+#iterates through all istances of LCC of ER (as nx.Graph objects) for k=2, N=512 in the data
+
+import pickle
+with open("ER_graphs.pkl", "rb") as f:
+    dictionary = pickle.load(f)
+    
+for i in range(20):
+    dictionary((512,2,i))
